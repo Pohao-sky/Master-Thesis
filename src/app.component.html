@@ -1,0 +1,55 @@
+<div class="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-50 bg-[#1a237e] text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-1.5 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#1a237e" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </div>
+          <span class="font-bold text-lg tracking-wide">DRPS 研究成果展示</span>
+        </div>
+        
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a routerLink="/home" routerLinkActive="bg-blue-800 text-white" class="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+              首頁
+            </a>
+            <a routerLink="/methodology" routerLinkActive="bg-blue-800 text-white" class="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+              研究方法
+            </a>
+            <a routerLink="/results" routerLinkActive="bg-blue-800 text-white" class="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+              研究成果
+            </a>
+            <a routerLink="/references" routerLinkActive="bg-blue-800 text-white" class="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+              參考文獻
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu (Simplified for demo) -->
+    <div class="md:hidden border-t border-blue-800 bg-[#1a237e] flex justify-around p-2">
+       <a routerLink="/home" routerLinkActive="text-blue-200" class="text-xs font-medium text-white px-2 py-1">首頁</a>
+       <a routerLink="/methodology" routerLinkActive="text-blue-200" class="text-xs font-medium text-white px-2 py-1">方法</a>
+       <a routerLink="/results" routerLinkActive="text-blue-200" class="text-xs font-medium text-white px-2 py-1">成果</a>
+       <a routerLink="/references" routerLinkActive="text-blue-200" class="text-xs font-medium text-white px-2 py-1">文獻</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 text-slate-300 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-sm">銘傳大學醫療資訊與管理學系 | 健康產業管理碩士班</p>
+      <p class="text-xs mt-2 text-slate-500">基於 RESTful API 的機器學習失智症風險預測系統—以 NACC 資料集為例</p>
+    </div>
+  </footer>
+</div>

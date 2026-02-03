@@ -1,0 +1,89 @@
+<div class="bg-slate-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-[#1a237e]">研究成果與分析</h2>
+      <p class="mt-4 text-slate-500">Results & Clinical Implications</p>
+    </div>
+
+    <!-- Main Conclusion Block -->
+    <div class="bg-white rounded-2xl shadow-lg border-l-8 border-[#1a237e] p-8 mb-16">
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">最佳模型：均衡版隨機森林 (Balanced Random Forest)</h3>
+      <p class="text-slate-600 leading-relaxed text-lg">
+        研究結果顯示，篩選出 9 項關鍵特徵的「均衡版隨機森林模型」表現最佳。透過對少數類別賦予較高權重，成功克服了醫療數據常見的類別不平衡問題。相較於 James et al. (2021) 等先前研究（Recall 約 0.27-0.28），本模型將 <span class="font-bold text-[#1a237e]">召回率大幅提升至 0.79</span>，證明了特徵優化與權重調整策略在臨床篩檢應用上的顯著成效。
+      </p>
+    </div>
+
+    <!-- Metrics Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      @for (metric of metrics(); track metric.label) {
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300" [class.ring-2]="metric.highlight" [class.ring-blue-500]="metric.highlight">
+          <div class="text-slate-500 text-sm font-medium uppercase tracking-wider mb-2">{{ metric.label }}</div>
+          <div class="text-4xl font-extrabold text-[#1a237e] mb-4">{{ metric.value }}</div>
+          <p class="text-slate-600 text-sm leading-relaxed flex-grow">
+            {{ metric.description }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <!-- Key Variables Section -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-16">
+      <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 border-l-4 border-l-[#1a237e]">
+        <h3 class="text-xl font-bold text-slate-800">關鍵特徵變數 (Key Variables)</h3>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm text-slate-600">
+          <thead class="bg-slate-50 text-xs uppercase font-semibold text-slate-500 border-b border-slate-200">
+            <tr>
+              <th class="px-6 py-4 w-1/4">變數名稱</th>
+              <th class="px-6 py-4">描述</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            @for (variable of keyVariables(); track variable.name) {
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-[#1a237e] font-mono">{{ variable.name }}</td>
+                <td class="px-6 py-4">{{ variable.description }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Analytical Text -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <span class="w-2 h-6 bg-blue-600 rounded-sm"></span>
+          臨床意義解析
+        </h4>
+        <div class="prose text-slate-600 text-justify">
+          <p class="mb-4">
+            在失智症篩檢的臨床場域中，<strong>「偽陰性」(False Negative)</strong> 的代價遠高於「偽陽性」。若將潛在患者誤判為健康，將導致患者錯失藥物控制與生活干預的關鍵時期。
+          </p>
+          <p>
+            因此，本研究的核心目標並非單純追求最高的準確率 (Accuracy)，而是著重於提升<strong>召回率 (Recall)</strong>。實驗數據證實，透過 Boruta 篩選出的 9 項特徵（包含 CDR 相關指標），結合類別權重調整，能夠建構出一個高敏感度的防護網，協助醫師更敏銳地捕捉到早期的認知退化跡象。
+          </p>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <span class="w-2 h-6 bg-blue-600 rounded-sm"></span>
+          RESTful API 實務應用
+        </h4>
+        <div class="prose text-slate-600 text-justify">
+          <p class="mb-4">
+            除了模型效能外，本研究成功驗證了透過 RESTful API 整合機器學習模型的可行性。利用 Flask 與 Angular 構建的前後端分離架構，展現了以下優勢：
+          </p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>即時性：</strong> 臨床數據輸入後，API 可毫秒級回傳風險評估。</li>
+            <li><strong>擴展性：</strong> 標準化的 JSON 介面使得跨機構的電子病歷 (EMR) 系統能夠無縫串接。</li>
+            <li><strong>隱私性：</strong> 採用 JWT 驗證與無狀態設計，確保病患數據傳輸安全。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
