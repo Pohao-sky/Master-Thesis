@@ -1,0 +1,83 @@
+<div class="max-w-4xl mx-auto px-4 py-16">
+  <div class="text-center mb-16">
+    <h1 class="text-3xl font-bold text-[#1a237e] mb-2 tracking-wide">系統展示與操作介面</h1>
+    <p class="mt-4 text-slate-500 font-medium">System Interface & Operation</p>
+  </div>
+
+  <section class="content-block">
+    <p>
+      本系統整合多項認知功能測驗模組與機器學習預測模型，提供受測者友善的互動操作介面。系統實際執行畫面如下：六個頁面：登入頁、訪客自填資料頁、使用者資料頁、動物蔬菜命名測驗、TMT-A、TMT-B、記憶力損害評估頁，以及測試結果頁。以下分別說明其功能與呈現方式。
+    </p>
+  </section>
+
+  <section class="content-block">
+    <p>
+      系統首頁為登入介面，使用者輸入帳號與密碼後，系統會透過後端資料庫驗證身份。登入成功後，系統即自動讀取個人基本資料，並導向至個人資料頁面顯示，如姓名、年齡與 CDR 相關特徵以及 MMSE 量表分數，為後續測驗模組提供必要的基礎資料（見圖 1）。若為初診資料庫中無資料，可點選[訪客模式登入]，自行填選 CDR 等資料(見圖 2)。
+    </p>
+    
+    <div class="img-container">
+      <img src="assets/images/fig1.png" alt="圖 1.登入頁、使用者資料頁">
+      <div class="img-caption">圖 1.登入頁、使用者資料頁</div>
+    </div>
+
+    <div class="img-container">
+      <img src="assets/images/fig2.png" alt="圖 2.登入頁、訪客自填資料頁">
+      <div class="img-caption">圖 2.登入頁、訪客自填資料頁</div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <p>
+      圖 3 為 ANIMALS 與 VEG 特徵之動物與蔬菜命名測驗介面。受測者須於一分鐘內盡可能列舉所能回想動物和蔬菜之詞彙。系統運行期間會即時錄製語音，並利用 Faster Whisper 自動語音辨識技術將音訊轉譯為文字，進而辨識受測者所述詞彙並執行自動計分。此測驗之目的在於透過數位化手段，精確評估受測者語意網路之完整性與其詞彙提取能力。
+    </p>
+
+    <div class="img-container">
+      <img src="assets/images/fig3.png" alt="圖 3.動物與蔬菜命名測驗頁">
+      <div class="img-caption">圖 3.動物與蔬菜命名測驗頁</div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <p>
+      圖 4 為數位版 TMT-A 頁之起始與完成介面，此頁用於擷取關鍵臨床變數之 TRAILA 特徵。進入該頁面時，系統會先顯示規則視窗引導受測者。測驗介面中隨機排列數字 1 至 20 之節點，受測者須透過滑鼠或觸控方式按序進行連接。系統於起始點觸發後即刻執行自動化計時，並於任務結束時記錄總耗時秒數。此項測驗數據如第二章第六節所述，係反映受測者注意力維持與視覺搜尋能力之關鍵指標。
+    </p>
+
+    <div class="img-container">
+      <img src="assets/images/fig4.png" alt="圖 4.TMT-A 頁始末圖 (電腦畫面)">
+      <div class="img-caption">圖 4.TMT-A 頁始末圖 (電腦畫面)</div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <p>
+      圖 5 為數位版 TMT-B 頁之起始與完成介面，此頁用於擷取關鍵臨床變數之 TRAILB 特徵，其操作流程與 TMT-A 相同，開始前會先顯示連線規則提示視窗。題目內容設計為數字與十二生肖交錯，例如 1 → 鼠 → 2 → 牛 → 3 → ... → 10。此測驗相較 Part A 更具挑戰性，需同時掌握數字與生肖的順序，能更全面反映受測者的認知靈活性與執行功能。系統在受測者完成連線後會自動記錄完成秒數，作為後續分析資料。由於下一頁需由醫護人員填寫，完成測驗後的提示視窗除了呈現完成時間，也會提醒受測者將裝置交給醫護人員，以確保後續流程正確進行。
+    </p>
+
+    <div class="img-container">
+      <img src="assets/images/fig5.png" alt="圖 5.TMT-B 頁始末圖 (電腦畫面)">
+      <div class="img-caption">圖 5.TMT-B 頁始末圖 (電腦畫面)</div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <p>
+      下一頁的頁面如圖 6 所示，為因應 COGMEM(見關鍵臨床變數) 要求所設計，醫護人員需依據受測者表現判斷其是否存在記憶力受損並完成相關紀錄。
+    </p>
+
+    <div class="img-container">
+      <img src="assets/images/fig6.png" alt="圖 6.記憶力損害評估頁">
+      <div class="img-caption">圖 6.記憶力損害評估頁</div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <p>
+      所有測驗完成後，系統自動整合受測者資料庫中的個人資料與各項測驗結果，並送入預先訓練的機器學習模型進行失智風險預測。頁面即時顯示預測結果（見圖 7），若機率低於 50%，預測結果顯示:「兩年內低失智症風險」；若機率高於 50%，則顯示:「2 年內可能罹患失智症，建議做進一步檢查」。協助受試者判斷自己的認知狀況。
+    </p>
+
+    <div class="img-container">
+      <img src="assets/images/fig7.png" alt="圖 7.測試結果頁">
+      <div class="img-caption">圖 7.測試結果頁</div>
+    </div>
+  </section>
+</div>
