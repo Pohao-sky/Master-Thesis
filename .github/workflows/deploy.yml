@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /master_thesis/
+        run: npm run build -- --configuration production --base-href /Master-Thesis/
         # Note: Replace /master_thesis/ with your repository name if different
         # Or remove --base-href if deploying to a custom domain at root
 
