@@ -46,7 +46,7 @@ export class MethodologyComponent {
       title: '模型訓練與優化 (Model Training)',
       description: '解決類別不平衡問題，建構高敏感度預測模型。',
       details: [
-        '模型比較：Random Forest (RF), XGBoost, Logistic Regression (LR)。',
+        '模型比較：Random Forest (RF), XGBoost, Logistic Regression (LR)，並各分成準確率為主和準確率&召回率均衡的版本。',
         '類別不平衡處理：調整 class_weight (RF/LR) 與 scale_pos_weight (XGBoost)。',
         '策略：賦予少數類別（失智症患者）較高權重，迫使模型關注陽性樣本。',
         '驗證：採用五折交叉驗證 (5-Fold Cross-Validation) 確保模型泛化能力。'
